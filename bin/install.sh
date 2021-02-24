@@ -351,7 +351,6 @@ base_debian() {
 		fwupd \
 		fwupdate \
 		gnupg-agent \
-		google-cloud-sdk \
 		iwd \
 		libapparmor-dev \
 		libimobiledevice6 \
