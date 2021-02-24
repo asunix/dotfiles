@@ -353,6 +353,7 @@ base_debian() {
 		udisks2 \
 		gnupg-agent \
 		iwd \
+		crda \
 		libapparmor-dev \
 		libimobiledevice6 \
 		libltdl-dev \
