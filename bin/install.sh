@@ -350,6 +350,7 @@ base_debian() {
 		cgroupfs-mount \
 		fwupd \
 		fwupdate \
+		udisks2 \
 		gnupg-agent \
 		iwd \
 		libapparmor-dev \
