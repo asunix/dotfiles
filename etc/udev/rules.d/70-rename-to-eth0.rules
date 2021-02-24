@@ -1,0 +1,1 @@
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="1c:69:7a:a0:d8:32", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eno*", NAME="eth0"
