@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+alias dl="cd ~/Downloads"
+alias g="git"
+alias h="history"
+alias gc=". ~/bin/gitdate && git commit -v "
+
+alias sudo='sudo '
+
+alias week='date +%V'
+
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+command -v hd > /dev/null || alias hd="hexdump -C"
+
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+alias hosts='sudo vim /etc/hosts'
+
+alias cp='cp -i'
+
+alias mv='mv -i'
+
+alias untar='tar xvf'
