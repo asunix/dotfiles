@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-PLATFORM=$(/bin/uname)
+PLATFORM=$(/usr/bin/uname)
 export PLATFORM
 
 check_is_sudo() {
@@ -85,6 +85,7 @@ install_homebrew() {
 		brew install hugo
 		brew install kubectx
 		brew install tree
+		brew install shellcheck
 		echo -e "\\nHomebrew installed and configured. To use it, logout and login again or run the following command:\\n"
 		echo -e "source ~/.profile\\n"
 		;;
@@ -111,7 +112,9 @@ install_homebrew() {
 		brew install tree
 		brew install tmux
 		brew install tmuxinator
-		brew install tmuxinator-completion
+		brew install shellcheck
+		brew install bash
+		brew install bash-completion
 		;;
 	*)
 		echo "Unknow $PLATFORM, do nothing"
@@ -219,7 +222,7 @@ usage() {
 	echo "  homebrew                   - install homebrew package manager"
 	echo "  vagrant                    - install Hashicorp Vagrant"
 	echo "  yubikey                    - configure yubikey tools"
-	echo "  qemu                       - install qemu"
+	echo "  qemu                       - install qemu on Mac and qemu libvirt on Linux"
 	echo "  dotfiles                   - install dot files"
 	echo "  scripts                    - install scripts"
 }
