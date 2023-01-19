@@ -207,12 +207,6 @@ use_yubikey() {
 		brew install gnupg yubikey-personalization hopenpgp-tools ykman pinentry-mac wget pidof
 		;;
 	esac
-	# shellcheck disable=SC2046
-	kill -9 $(pidof scdaemon) >/dev/null 2>&1 || true
-	# shellcheck disable=SC2046
-	kill -9 $(pidof gpg-agent) >/dev/null 2>&1 || true
-	gpg-connect-agent /bye >/dev/null 2>&1 || true
-	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1 || true
 }
 
 usage() {
@@ -221,7 +215,7 @@ usage() {
 	echo "  sudo                       - configure sudo for linux server"
 	echo "  homebrew                   - install homebrew package manager"
 	echo "  vagrant                    - install Hashicorp Vagrant"
-	echo "  yubikey                    - configure yubikey tools"
+	echo "  yubikey                    - install yubikey tools and gnupg"
 	echo "  qemu                       - install qemu on Mac and qemu libvirt on Linux"
 	echo "  dotfiles                   - install dot files"
 	echo "  scripts                    - install scripts"
