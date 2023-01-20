@@ -139,6 +139,7 @@ install_base() {
 			dirmngr \
 			lsb-release \
 			ifupdown \
+			git \
 			build-essential \
 			cpu-checker \
 			--no-install-recommends
@@ -171,6 +172,44 @@ install_vagrant() {
 		brew install hashicorp/tap/hashicorp-vagrant
 		;;
 	esac
+}
+
+get_dotfiles() {
+	case $PLATFORM in
+	Linux)
+		if ! command -v git 1>/dev/null; then
+			echo -e "\\ngit is not installed\\n"
+			exit 1
+		fi
+		if ! command -v make 1>/dev/null; then
+			echo -e "\\nmake is not installed\\n"
+			exit 1
+		fi
+		;;
+	Darwin)
+		if ! xcode-select -p 1>/dev/null; then
+			echo -e "\\nxcode-select is not installed\\nPlease run the following command:\\n\\txcode-select install\\n"
+			exit 1
+		fi
+		;;
+	esac
+	# create subshell
+	(
+	cd "$HOME"
+
+	if [[ ! -d "${HOME}/dotfiles" ]]; then
+		# install dotfiles from repo
+		git clone git@github.com:asunix/dotfiles.git "${HOME}/dotfiles"
+	fi
+
+	cd "${HOME}/dotfiles"
+
+	# set the correct origin
+	git remote set-url origin git@github.com:asunix/dotfiles.git
+
+	# installs all the things
+	make
+	)
 }
 
 use_yubikey() {
@@ -252,7 +291,7 @@ main() {
 	elif [[ $cmd == "qemu" ]]; then
 		echo "Not implemented"
 	elif [[ $cmd == "dotfiles" ]]; then
-		echo "Not implemented"
+		get_dotfiles
 	elif [[ $cmd == "scripts" ]]; then
 		echo "Not implemented"
 	else
