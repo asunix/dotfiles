@@ -115,6 +115,7 @@ install_homebrew() {
 		brew install shellcheck
 		brew install bash
 		brew install bash-completion
+		brew install --cask alacritty
 		;;
 	*)
 		echo "Unknow $PLATFORM, do nothing"
@@ -141,6 +142,7 @@ install_base() {
 			ifupdown \
 			git \
 			build-essential \
+			fonts-powerline \
 			cpu-checker \
 			--no-install-recommends
 
@@ -191,6 +193,11 @@ get_dotfiles() {
 			echo -e "\\nxcode-select is not installed\\nPlease run the following command:\\n\\txcode-select install\\n"
 			exit 1
 		fi
+		git clone https://github.com/powerline/fonts.git --depth=1
+		cd fonts
+		./install.sh
+		cd ..
+		rm -rf fonts
 		;;
 	esac
 	# create subshell
