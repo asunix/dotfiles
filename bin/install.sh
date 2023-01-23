@@ -206,7 +206,7 @@ get_dotfiles() {
 
 	if [[ ! -d "${HOME}/dotfiles" ]]; then
 		# install dotfiles from repo
-		git clone git@github.com:asunix/dotfiles.git "${HOME}/dotfiles"
+		git clone https://github.com/asunix/dotfiles.git "${HOME}/dotfiles"
 	fi
 
 	cd "${HOME}/dotfiles"
