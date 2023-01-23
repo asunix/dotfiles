@@ -1,5 +1,5 @@
-env:
-  TERM: alacritty
+#env:
+#  TERM: alacritty
 
 selection:
   save_to_clipboard: true
