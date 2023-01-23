@@ -1,10 +1,5 @@
 SHELL := bash
 
-# Check if container engine is installed.
-ifeq (, $(shell { command -v podman || command -v docker; } 2>/dev/null))
-$(error "No container engine (podman, docker) is installed")
-endif
-
 # Engine container command.
 engine := $(shell { command -v podman || command -v docker; } 2>/dev/null)
 
