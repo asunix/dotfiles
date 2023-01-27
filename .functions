@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-PLATFORM=$(/usr/bin/uname)
-export PLATFORM
-
 # Create a new directory and enter it
 mkd() {
 	mkdir -p "$@"
@@ -406,10 +403,3 @@ restart_gpgagent(){
 gitsetoriginnopush() {
 	git remote set-url --push origin no_push
 }
-
-case $PLATFORM in
-Linux)
-	;;
-Darwin)
-	;;
-esac
