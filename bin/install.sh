@@ -342,6 +342,7 @@ cleanupall() {
 			f=$(basename "$file")
 			rm -f "$HOME"/"$f"
 		done
+		rm -f "$HOME"/.profile
 		find "$HOME"/dotfiles/bin -type f -not -name "*-backlight" -not -name ".*.swp" | while read -r file
 		do
 			f=$(basename "$file")
