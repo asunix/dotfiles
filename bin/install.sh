@@ -172,6 +172,7 @@ install_homebrew() {
 		brew install --cask telegram-desktop
 		brew install --cask signal
 		brew install --cask spotify
+		brew install --cask xquartz
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -373,6 +374,8 @@ cleanupall() {
 		brew uninstall --cask --force telegram-desktop
 		brew uninstall --cask --force signal
 		brew uninstall --cask --force spotify
+		brew uninstall --cask --force xquartz
+
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   			chsh -s "/bin/zsh";
