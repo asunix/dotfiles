@@ -25,8 +25,16 @@ scrolling:
 
 alt_send_esc: false
 
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
 mouse:
   hide_when_typing: true
+  
+hints:
+  hyperlinks: true
+  command: open
+  mods: Shift
 
 font:
   normal:
