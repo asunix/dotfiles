@@ -23,6 +23,8 @@ scrolling:
   history: 10000
   multiplier: 3
 
+alt_send_esc: false
+
 mouse:
   hide_when_typing: true
 
