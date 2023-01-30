@@ -28,7 +28,7 @@ dotfiles: ## Installs the dotfiles.
 	done; \
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
 	git update-index --skip-worktree $(CURDIR)/.gitconfig;
-	# ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
+	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
