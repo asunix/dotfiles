@@ -169,8 +169,8 @@ install_homebrew() {
 		brew install --cask signal
 		brew install --cask spotify
 		brew install --cask xquartz
-        brew install --cask istat-menu
-        brew install --cask bartender
+		brew install --cask istat-menus
+		brew install --cask bartender
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -373,7 +373,7 @@ cleanupall() {
 		brew uninstall --cask --force signal
 		brew uninstall --cask --force spotify
 		brew uninstall --cask --force xquartz
-		brew uninstall --cask --force istat-menu
+		brew uninstall --cask --force istat-menus
 		brew uninstall --cask --force bartender
 
 		BREW_PREFIX=$(brew --prefix)
