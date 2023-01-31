@@ -8,10 +8,22 @@ export GOPATH="${HOME}/.go"
 
 case $PLATFORM in
 Linux)
+	export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+	export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+	export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+	export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+	export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
+
 	# update path
 	export PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:${PATH}:/sbin:/home/linuxbrew/.linuxbrew/sbin:/usr/local/sbin
 	;;
 Darwin)
+	export HOMEBREW_PREFIX="/usr/local";
+	export HOMEBREW_CELLAR="/usr/local/Cellar";
+	export HOMEBREW_REPOSITORY="/usr/local/Homebrew";
+	export MANPATH="/usr/local/share/man${MANPATH+:$MANPATH}:";
+	export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
+
 	# update path
 	export PATH=/usr/local/bin:${PATH}:/sbin:/usr/local/sbin
 
