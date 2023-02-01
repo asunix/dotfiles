@@ -59,7 +59,7 @@ prompt_git() {
 
 cloud=""
 if [[ -f /proc/cpuinfo ]] && grep -q "^flags.* hypervisor" /proc/cpuinfo && [[ ! -d "/mnt/c/Windows/" ]]; then
-	cloud="☁️ "
+	cloud="☁️  "
 fi
 
 if tput setaf 1 &> /dev/null; then
