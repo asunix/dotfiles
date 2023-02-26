@@ -189,5 +189,10 @@ Darwin)
 
 	# Show active network interfaces
 	alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+
+	# kubectl alias for short k
+	alias k="kubectl"
+        complete -o default -F __start_kubectl k
+
 	;;
 esac
