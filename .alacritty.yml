@@ -23,8 +23,6 @@ scrolling:
   history: 10000
   multiplier: 3
 
-alt_send_esc: false
-
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
