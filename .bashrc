@@ -152,3 +152,9 @@ if hash crc 2>/dev/null; then
 	# shellcheck source=/dev/null
 	source <(crc completion bash)
 fi
+
+# source oc bash completion
+if hash oc 2>/dev/null; then
+        # shellcheck source=/dev/null
+        source <(oc completion bash)
+fi
