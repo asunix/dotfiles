@@ -146,3 +146,9 @@ if hash kubectl 2>/dev/null; then
 	# shellcheck source=/dev/null
 	source <(kubectl completion bash)
 fi
+
+# source crc bash completion
+if hash crc 2>/dev/null; then
+	# shellcheck source=/dev/null
+	source <(crc completion bash)
+fi
