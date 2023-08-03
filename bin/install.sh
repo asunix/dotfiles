@@ -171,6 +171,7 @@ install_homebrew() {
 		brew install --cask xquartz
 		brew install --cask istat-menus
 		brew install --cask bartender
+		brew install --cask firefox
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
