@@ -172,6 +172,7 @@ install_homebrew() {
 		brew install --cask istat-menus
 		brew install --cask bartender
 		brew install --cask firefox
+		brew install --cask vmware-horizon-client
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -376,6 +377,7 @@ cleanupall() {
 		brew uninstall --cask --force xquartz
 		brew uninstall --cask --force istat-menus
 		brew uninstall --cask --force bartender
+		brew uninstall --cask --force vmware-horizon-client
 
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
