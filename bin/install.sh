@@ -375,6 +375,7 @@ cleanupall() {
 		brew uninstall --cask --force xquartz
 		brew uninstall --cask --force istat-menus
 		brew uninstall --cask --force bartender
+		brew uninstall --cask --force firefox
 		brew uninstall --cask --force vmware-horizon-client
 
 		BREW_PREFIX=$(brew --prefix)
