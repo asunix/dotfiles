@@ -346,7 +346,7 @@ cleanupall() {
 		find "$HOME"/dotfiles/bin -type f -not -name "*-backlight" -not -name ".*.swp" | while read -r file
 		do
 			f=$(basename "$file")
-			rm -f /usr/local/bin/"$f"
+			sudo rm -f /usr/local/bin/"$f"
 		done
 		echo -e "\\nRemove gnupg config directory"
 		rm -rf "$HOME"/.gnupg
