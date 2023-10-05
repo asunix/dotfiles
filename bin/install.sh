@@ -160,7 +160,6 @@ install_homebrew() {
 		brew install --cask send-to-kindle
 		brew install --cask kindle
 		brew install --cask visual-studio-code
-		brew install --cask xquart
 		brew install --cask kaleidoscope
 		brew install --cask drawio
 		brew install --cask keycastr
@@ -366,7 +365,6 @@ cleanupall() {
 		brew uninstall --cask --force send-to-kindle
 		brew uninstall --cask --force kindle
 		brew uninstall --cask --force visual-studio-code
-		brew uninstall --cask --force xquart
 		brew uninstall --cask --force kaleidoscope
 		brew uninstall --cask --force drawio
 		brew uninstall --cask --force keycastr
