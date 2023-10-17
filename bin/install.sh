@@ -172,6 +172,7 @@ install_homebrew() {
 		brew install --cask bartender
 		brew install --cask firefox
 		brew install --cask vmware-horizon-client
+		brew install --cask intellij-idea
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -325,7 +326,11 @@ use_yubikey() {
 		export HOMEBREW_NO_INSTALL_CLEANUP=1
 		brew install gnupg yubikey-personalization hopenpgp-tools ykman pinentry-mac wget pidof
 		brew cleanup
-		ln -sfn "$HOME"/.gnupg/gpg-agent.conf.Darwin "$HOME"/.gnupg/gpg-agent.conf
+                if [[ $(uname -m) == 'arm64' ]]; then
+		   ln -sfn "$HOME"/.gnupg/gpg-agent.conf.Darwin.M1 "$HOME"/.gnupg/gpg-agent.conf
+                else
+		   ln -sfn "$HOME"/.gnupg/gpg-agent.conf.Darwin.Intel "$HOME"/.gnupg/gpg-agent.conf
+                fi
 		;;
 	esac
 }
@@ -377,6 +382,7 @@ cleanupall() {
 		brew uninstall --cask --force bartender
 		brew uninstall --cask --force firefox
 		brew uninstall --cask --force vmware-horizon-client
+		brew uninstall --cask --force intellij-idea
 
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
