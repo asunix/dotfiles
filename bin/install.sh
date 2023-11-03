@@ -139,6 +139,7 @@ install_homebrew() {
 		brew install bash
 		brew install bash-completion@2
 		brew install docker
+		brew install docker-buildx
 		brew install podman
 
 		if [[ ! -d "${HOME}/.tmux" ]]; then
