@@ -142,12 +142,14 @@ install_homebrew() {
 		brew install docker
 		brew install docker-buildx
 		brew install podman
+		brew install kind
+		brew install wezterm
+		brew install yq
 
 		if [[ ! -d "${HOME}/.tmux" ]]; then
 			git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 		fi
 
-		brew install --cask alacritty
 		brew install --cask google-chrome
 		brew install --cask microsoft-teams
 		brew install --cask skype
@@ -160,9 +162,9 @@ install_homebrew() {
 		brew install --cask utm
 		brew install --cask tower
 		brew install --cask send-to-kindle
-		brew install --cask kindle
+		# brew install --cask kindle
 		brew install --cask visual-studio-code
-		brew install --cask kaleidoscope
+		# brew install --cask kaleidoscope
 		brew install --cask drawio
 		brew install --cask keycastr
 		brew install --cask marked
@@ -175,6 +177,8 @@ install_homebrew() {
 		brew install --cask firefox
 		brew install --cask vmware-horizon-client
 		brew install --cask intellij-idea
+		brew install --cask vnc-viewer
+		brew install --cask snagit
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -357,7 +361,7 @@ cleanupall() {
 		done
 		echo -e "\\nRemove gnupg config directory"
 		rm -rf "$HOME"/.gnupg
-		brew uninstall --cask --force alacritty
+		brew uninstall wezterm
 		brew uninstall --cask --force google-chrome
 		brew uninstall --cask --force microsoft-teams
 		brew uninstall --cask --force skype
@@ -370,9 +374,9 @@ cleanupall() {
 		brew uninstall --cask --force utm
 		brew uninstall --cask --force tower
 		brew uninstall --cask --force send-to-kindle
-		brew uninstall --cask --force kindle
+		# brew uninstall --cask --force kindle
 		brew uninstall --cask --force visual-studio-code
-		brew uninstall --cask --force kaleidoscope
+		# brew uninstall --cask --force kaleidoscope
 		brew uninstall --cask --force drawio
 		brew uninstall --cask --force keycastr
 		brew uninstall --cask --force marked
@@ -385,6 +389,8 @@ cleanupall() {
 		brew uninstall --cask --force firefox
 		brew uninstall --cask --force vmware-horizon-client
 		brew uninstall --cask --force intellij-idea
+		brew uninstall --cask --force vnc-viewer
+		brew uninstall --cask --force snagit
 
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
