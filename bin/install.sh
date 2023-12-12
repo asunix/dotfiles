@@ -83,6 +83,7 @@ install_homebrew() {
 		brew install kubectx
 		brew install tree
 		brew install shellcheck
+		brew install --ignore-dependencies lima
 		echo -e "\\nHomebrew installed and configured. To use it, logout and login again or run the following command:\\n"
 		echo -e "source ~/.profile\\n"
 		;;
@@ -449,8 +450,8 @@ install_scripts() {
 	curl -sSL https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py  > /usr/local/bin/speedtest
 	chmod +x /usr/local/bin/speedtest
 	curl -sSL https://raw.githubusercontent.com/jeffkaufman/icdiff/master/icdiff > /usr/local/bin/icdiff
-	curl -sSL https://raw.githubusercontent.com/jeffkaufman/icdiff/master/git-icdiff > /usr/local/bin/git-icdiff
 	chmod +x /usr/local/bin/icdiff
+	curl -sSL https://raw.githubusercontent.com/jeffkaufman/icdiff/master/git-icdiff > /usr/local/bin/git-icdiff
 	chmod +x /usr/local/bin/git-icdiff
 	curl -sSL https://raw.githubusercontent.com/tehmaze/lolcat/master/lolcat > /usr/local/bin/lolcat
 	chmod +x /usr/local/bin/lolcat
