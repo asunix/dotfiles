@@ -143,7 +143,6 @@ install_homebrew() {
 		brew install docker-buildx
 		brew install podman
 		brew install kind
-		brew install wezterm
 		brew install yq
 
 		if [[ ! -d "${HOME}/.tmux" ]]; then
@@ -361,7 +360,6 @@ cleanupall() {
 		done
 		echo -e "\\nRemove gnupg config directory"
 		rm -rf "$HOME"/.gnupg
-		brew uninstall wezterm
 		brew uninstall --cask --force google-chrome
 		brew uninstall --cask --force microsoft-teams
 		brew uninstall --cask --force skype
