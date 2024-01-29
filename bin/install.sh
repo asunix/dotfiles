@@ -178,6 +178,7 @@ install_homebrew() {
 		brew install --cask intellij-idea
 		brew install --cask vnc-viewer
 		brew install --cask snagit
+		brew install --cask imhex
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
