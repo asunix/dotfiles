@@ -158,3 +158,9 @@ if hash oc 2>/dev/null; then
         # shellcheck source=/dev/null
         source <(oc completion bash)
 fi
+
+# source podman bash completion
+if hash podman 2>/dev/null; then
+        # shellcheck source=/dev/null
+        source <(podman completion bash)
+fi
