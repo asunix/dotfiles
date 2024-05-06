@@ -132,6 +132,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
+alias mux="tmuxinator"
+complete -o default -F _tmuxinator mux
+
 case $PLATFORM in
 Linux)
 	# Get Software Updates, and update installed Homebrew and their installed packages
