@@ -129,6 +129,7 @@ install_homebrew() {
 		brew install go
 		brew install helm
 		brew install kubernetes-cli
+		brew install openshift-cli
 		brew install jq
 		brew install ipcalc
 		brew install hugo
