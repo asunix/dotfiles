@@ -145,10 +145,14 @@ install_homebrew() {
 		brew install podman
 		brew install kind
 		brew install yq
+                brew install reattach-to-user-namespace
+                brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
+                brew install wezterm
 
-		if [[ ! -d "${HOME}/.tmux" ]]; then
-			git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-		fi
+		# DA LEVARE BAGGATO DA SOSTITUIRE CON INSTALLAZIONE DIRETTA DEI PLUGIN
+		###if [[ ! -d "${HOME}/.tmux" ]]; then
+		###	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+		###fi
 
 		brew install --cask google-chrome
 		brew install --cask microsoft-teams
