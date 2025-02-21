@@ -164,3 +164,8 @@ if hash podman 2>/dev/null; then
         # shellcheck source=/dev/null
         source <(podman completion bash)
 fi
+
+if hash fzf 2>/dev/null; then
+        # shellcheck source=/dev/null
+        eval "$(fzf --bash)"
+fi

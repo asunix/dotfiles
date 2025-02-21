@@ -145,6 +145,7 @@ install_homebrew() {
 		brew install podman
 		brew install kind
 		brew install yq
+		brew install fzf
                 brew install reattach-to-user-namespace
                 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
                 brew install wezterm
