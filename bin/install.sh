@@ -185,6 +185,7 @@ install_homebrew() {
 		brew install --cask vnc-viewer
 		brew install --cask snagit
 		brew install --cask imhex
+		brew install --cask vlc
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -396,6 +397,7 @@ cleanupall() {
 		brew uninstall --cask --force intellij-idea
 		brew uninstall --cask --force vnc-viewer
 		brew uninstall --cask --force snagit
+		brew uninstall --cask --force vlc
 
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
