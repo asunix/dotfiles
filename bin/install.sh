@@ -146,6 +146,8 @@ install_homebrew() {
 		brew install kind
 		brew install yq
 		brew install fzf
+                brew install sesh
+                brew install zoxide
                 brew install reattach-to-user-namespace
                 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
                 brew install wezterm
@@ -186,6 +188,7 @@ install_homebrew() {
 		brew install --cask snagit
 		brew install --cask imhex
 		brew install --cask vlc
+		brew install --cask wezterm
 
 		# Switch to using brew-installed bash as default shell
 		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -398,6 +401,7 @@ cleanupall() {
 		brew uninstall --cask --force vnc-viewer
 		brew uninstall --cask --force snagit
 		brew uninstall --cask --force vlc
+		brew uninstall --cask --force wezterm
 
 		BREW_PREFIX=$(brew --prefix)
 		if grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
