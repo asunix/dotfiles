@@ -138,8 +138,6 @@ install_homebrew() {
 		brew install tmux
 		brew install tmuxinator
 		brew install shellcheck
-		brew install bash
-		brew install bash-completion@2
 		brew install docker
 		brew install docker-buildx
 		brew install podman
@@ -149,8 +147,10 @@ install_homebrew() {
                 brew install sesh
                 brew install zoxide
                 brew install reattach-to-user-namespace
+                brew install pandoc
+                brew install pandoc-crossref
+
                 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
-                brew install wezterm
 
 		# DA LEVARE BAGGATO DA SOSTITUIRE CON INSTALLAZIONE DIRETTA DEI PLUGIN
 		###if [[ ! -d "${HOME}/.tmux" ]]; then
@@ -158,11 +158,8 @@ install_homebrew() {
 		###fi
 
 		brew install --cask google-chrome
-		brew install --cask microsoft-teams
-		brew install --cask skype
 		brew install --cask whatsapp
 		brew install --cask 1password
-		brew install --cask alfred
 		brew install --cask iterm2
 		brew install --cask appcleaner
 		brew install --cask wireshark
@@ -180,21 +177,35 @@ install_homebrew() {
 		brew install --cask spotify
 		brew install --cask xquartz
 		brew install --cask istat-menus
-		brew install --cask bartender
 		brew install --cask firefox
-		brew install --cask vmware-horizon-client
-		brew install --cask intellij-idea
 		brew install --cask vnc-viewer
 		brew install --cask snagit
 		brew install --cask imhex
 		brew install --cask vlc
 		brew install --cask wezterm
+		brew install --cask discord
+		brew install --cask ghostty
+		brew install --cask devtoys
+		brew install --cask elgato-stream-deck
+		brew install --cask daisydisk
+		brew install --cask garmin-express
+		brew install --cask keyclu
+		brew install --cask hhkb
+		brew install --cask hhkb-studio
+		brew install --cask zotero
+		brew install --cask tripmode
+		brew install --cask nextpad++
+		brew install --cask obs
+		brew install --cask obsidian
+		brew install --cask logitune
+		brew install --cask hp-easy-admin
+		brew install --cask hp-easy-start
 
 		# Switch to using brew-installed bash as default shell
-		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  			echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  			chsh -s "${BREW_PREFIX}/bin/bash";
-		fi;
+#		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+#  			echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+#  			chsh -s "${BREW_PREFIX}/bin/bash";
+#		fi;
 		
 		# Remove outdated versions from the cellar.
 		brew cleanup
