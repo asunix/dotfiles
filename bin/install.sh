@@ -149,6 +149,7 @@ install_homebrew() {
                 brew install reattach-to-user-namespace
                 brew install pandoc
                 brew install pandoc-crossref
+                brew install stow
 
                 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 
