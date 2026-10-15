@@ -200,6 +200,7 @@ install_homebrew() {
 		brew install --cask logitune
 		brew install --cask hp-easy-admin
 		brew install --cask hp-easy-start
+		brew install --cask reader
 
 		# Switch to using brew-installed bash as default shell
 #		if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
